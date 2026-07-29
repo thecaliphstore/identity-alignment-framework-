@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Identity Alignment Framework — Feysal Khaleefe</title>
+<meta name="description" content="Discover your identity archetype. Realign your inner world. Choose your path into the Identity Alignment Framework.">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --green:#1D6A3A;--green-dark:#0D3D20;--green-light:#E8F5ED;
+  --gold:#B8730A;--gold-bg:#FFF8E7;--gold-border:#E8C97A;
+  --text:#1A1A1A;--muted:#666;--light:#999;
+  --bg:#FAFAF8;--surface:#fff;--border:#E2E2DE;--border-strong:#C8C8C4;
+  --radius:10px;--shadow:0 1px 3px rgba(0,0,0,.05),0 4px 12px rgba(0,0,0,.06);
+  --shadow-lg:0 2px 8px rgba(0,0,0,.07),0 8px 28px rgba(0,0,0,.09);
+}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased}
+
+/* ── NAV ── */
+nav{background:var(--green-dark);padding:1rem 1.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.75rem}
+.nav-brand{font-size:13px;font-weight:500;letter-spacing:.08em;color:#88AA88;text-transform:uppercase}
+.nav-cta{padding:8px 18px;background:var(--green);color:#fff;border-radius:var(--radius);font-size:13px;font-weight:600;text-decoration:none;transition:opacity .15s}
+.nav-cta:hover{opacity:.85}
+
+/* ── HERO ── */
+.hero{text-align:center;padding:4rem 1.5rem 3rem;max-width:660px;margin:0 auto}
+.hero-eyebrow{display:inline-block;background:var(--green-light);color:var(--green-dark);font-size:12px;font-weight:500;letter-spacing:.06em;padding:4px 14px;border-radius:20px;margin-bottom:1.25rem}
+.hero h1{font-size:clamp(28px,5vw,44px);font-weight:700;color:var(--text);line-height:1.15;margin-bottom:.75rem;letter-spacing:-.02em}
+.hero h1 span{color:var(--green)}
+.hero p{font-size:17px;color:var(--muted);line-height:1.65;max-width:520px;margin:0 auto 2rem}
+.hero-btns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.btn-hero-main{padding:13px 30px;background:var(--green-dark);color:#fff;border-radius:var(--radius);font-size:15px;font-weight:600;text-decoration:none;transition:opacity .15s;border:none;cursor:pointer}
+.btn-hero-main:hover{opacity:.85}
+.btn-hero-alt{padding:13px 30px;background:transparent;color:var(--text);border:1.5px solid var(--border-strong);border-radius:var(--radius);font-size:15px;font-weight:500;text-decoration:none;transition:background .15s;cursor:pointer}
+.btn-hero-alt:hover{background:#F0F0EE}
+
+/* ── QUOTE STRIP ── */
+.quote-strip{background:var(--gold-bg);border-top:1px solid var(--gold-border);border-bottom:1px solid var(--gold-border);padding:1.25rem 1.5rem;text-align:center}
+.quote-strip p{font-size:15px;color:var(--gold);font-style:italic;max-width:580px;margin:0 auto .3rem}
+.quote-strip cite{font-size:12px;color:var(--light);font-style:normal}
+
+/* ── SECTIONS ── */
+.section{max-width:960px;margin:0 auto;padding:4rem 1.25rem}
+.section-label{text-align:center;font-size:11px;font-weight:500;letter-spacing:.1em;color:var(--light);text-transform:uppercase;margin-bottom:.5rem}
+.section-title{text-align:center;font-size:clamp(22px,4vw,30px);font-weight:600;color:var(--text);margin-bottom:.5rem}
+.section-sub{text-align:center;font-size:15px;color:var(--muted);max-width:520px;margin:0 auto 2.5rem;line-height:1.6}
+.divider{height:1px;background:var(--border);margin:0 1.25rem}
+
+/* ── FRAMEWORK STEPS ── */
+.steps-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px;margin-bottom:3rem}
+.step-card{background:var(--surface);border:0.5px solid var(--border);border-radius:var(--radius);padding:1rem .875rem;text-align:center}
+.step-num{font-size:11px;font-weight:500;color:var(--green);letter-spacing:.06em;margin-bottom:.3rem}
+.step-name{font-size:13px;font-weight:500;color:var(--text);line-height:1.3}
+.step-desc{font-size:12px;color:var(--muted);margin-top:.25rem;line-height:1.4}
+
+/* ── ARCHETYPES ── */
+.arch-intro{text-align:center;background:var(--surface);border:0.5px solid var(--border);border-radius:14px;padding:1.25rem;margin-bottom:1.5rem;font-size:14px;color:var(--muted);line-height:1.6}
+.arch-intro strong{color:var(--text)}
+.arch-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px}
+.arch-card{background:var(--surface);border:1px solid var(--border);border-radius:16px;overflow:hidden;box-shadow:var(--shadow);transition:box-shadow .2s}
+.arch-card:hover{box-shadow:var(--shadow-lg)}
+.arch-head{padding:1.25rem 1.25rem .875rem;border-bottom:0.5px solid var(--border)}
+.arch-badge{display:inline-flex;align-items:center;gap:6px;padding:5px 12px;border-radius:20px;font-size:12px;font-weight:600;margin-bottom:.75rem;border:1px solid transparent}
+.arch-name{font-size:19px;font-weight:600;color:var(--text);margin-bottom:.2rem}
+.arch-tagline{font-size:13px;color:var(--muted);font-style:italic;line-height:1.5}
+.arch-body{padding:.875rem 1.25rem}
+.arch-section{margin-bottom:.875rem}
+.arch-section-label{font-size:10px;font-weight:600;letter-spacing:.08em;color:var(--light);text-transform:uppercase;margin-bottom:.3rem}
+.arch-section p{font-size:13px;color:var(--text);line-height:1.55}
+.arch-shadow{border-left:3px solid var(--border-strong);padding-left:.75rem}
+.arch-shadow p{font-size:13px;color:var(--muted);font-style:italic;line-height:1.55}
+.arch-traits{display:flex;flex-wrap:wrap;gap:5px;margin-top:.875rem;padding-top:.875rem;border-top:0.5px solid var(--border)}
+.trait-tag{font-size:11px;padding:3px 9px;border-radius:20px;font-weight:500}
+
+/* ── PRICING ── */
+.pricing-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px;margin-bottom:1.5rem}
+.plan{background:var(--surface);border:1px solid var(--border);border-radius:16px;overflow:hidden;box-shadow:var(--shadow);display:flex;flex-direction:column;position:relative}
+.plan.featured{border-color:var(--green);border-width:2px}
+.plan.premium{border-color:var(--gold-border)}
+.pop-tag{position:absolute;top:-1px;right:18px;background:var(--green);color:#fff;font-size:11px;font-weight:500;padding:4px 12px;border-radius:0 0 8px 8px}
+.lim-tag{position:absolute;top:-1px;right:18px;background:var(--gold);color:#fff;font-size:11px;font-weight:500;padding:4px 12px;border-radius:0 0 8px 8px}
+.plan-head{padding:1.5rem 1.25rem 1rem}
+.plan-type{font-size:11px;font-weight:500;letter-spacing:.07em;color:var(--light);text-transform:uppercase;margin-bottom:.5rem}
+.plan-name{font-size:17px;font-weight:600;color:var(--text);margin-bottom:.35rem;line-height:1.3}
+.plan-tagline{font-size:13px;color:var(--muted);line-height:1.5;margin-bottom:1rem}
+.plan-price{display:flex;align-items:baseline;gap:6px;margin-bottom:.3rem}
+.p-amount{font-size:34px;font-weight:700;color:var(--text);letter-spacing:-.02em}
+.p-label{font-size:13px;color:var(--muted)}
+.p-was{font-size:12px;color:var(--light);text-decoration:line-through;margin-left:2px}
+.p-limit{font-size:12px;color:var(--gold);font-weight:500;margin-top:.25rem}
+.plan-divider{height:0.5px;background:var(--border);margin:0 1.25rem}
+.plan-features{padding:1rem 1.25rem;flex:1}
+.feat{display:flex;gap:8px;align-items:flex-start;font-size:13px;color:var(--text);margin-bottom:7px;line-height:1.45}
+.feat-icon{color:var(--green);font-weight:700;flex-shrink:0;margin-top:1px}
+.plan-footer{padding:0 1.25rem 1.25rem}
+.p-btn{display:block;width:100%;padding:11px;border-radius:var(--radius);font-size:14px;font-weight:600;text-align:center;text-decoration:none;cursor:pointer;border:none;transition:opacity .15s}
+.p-btn:hover{opacity:.88}
+.btn-outline{background:transparent;color:var(--text);border:1.5px solid var(--border-strong)}
+.btn-green{background:var(--green);color:#fff}
+.btn-dark{background:var(--green-dark);color:#fff}
+.p-note{font-size:11px;color:var(--light);text-align:center;margin-top:.5rem;line-height:1.5}
+
+/* ── COHORT ── */
+.cohort{background:var(--green-dark);border-radius:20px;padding:2.5rem 2rem;position:relative;overflow:hidden;margin-top:1.5rem}
+.cohort::before{content:'';position:absolute;top:-80px;right:-80px;width:260px;height:260px;border-radius:50%;background:rgba(255,255,255,.03)}
+.c-eyebrow{font-size:11px;font-weight:500;letter-spacing:.1em;color:#88AA88;text-transform:uppercase;margin-bottom:.75rem}
+.c-title{font-size:clamp(20px,4vw,28px);font-weight:700;color:#fff;margin-bottom:.5rem;line-height:1.2}
+.c-sub{font-size:15px;color:#A8CCB0;line-height:1.6;max-width:600px;margin-bottom:2rem}
+.c-meta{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px;margin-bottom:2rem}
+.c-detail{background:rgba(255,255,255,.06);border:0.5px solid rgba(255,255,255,.1);border-radius:10px;padding:.875rem 1rem}
+.c-label{font-size:11px;color:#668866;font-weight:500;margin-bottom:3px}
+.c-val{font-size:14px;font-weight:600;color:#fff}
+.c-tiers{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:1.75rem}
+@media(max-width:480px){.c-tiers{grid-template-columns:1fr}}
+.c-tier{background:rgba(255,255,255,.07);border:0.5px solid rgba(255,255,255,.14);border-radius:12px;padding:1.1rem 1.25rem}
+.c-tier.vip{background:rgba(184,115,10,.12);border-color:rgba(184,115,10,.35)}
+.ct-label{font-size:11px;color:#88AA88;font-weight:500;letter-spacing:.05em;margin-bottom:.3rem}
+.ct-label.gold{color:#EF9F27}
+.ct-name{font-size:16px;font-weight:600;color:#fff;margin-bottom:.25rem}
+.ct-price{font-size:26px;font-weight:700;color:#fff;margin-bottom:.5rem;letter-spacing:-.01em}
+.ct-price span{font-size:14px;font-weight:400;color:#A8CCB0}
+.ct-feats{list-style:none}
+.ct-feats li{font-size:12px;color:#A8CCB0;margin-bottom:4px;display:flex;gap:6px}
+.ct-feats li::before{content:'✓';color:#5DCAA5;font-weight:700;flex-shrink:0}
+.c-btns{display:flex;gap:10px;flex-wrap:wrap}
+.c-btn-main{flex:1;min-width:200px;padding:12px 24px;background:#fff;color:var(--green-dark);border-radius:var(--radius);font-size:14px;font-weight:600;text-align:center;text-decoration:none;border:none;cursor:pointer;transition:opacity .15s}
+.c-btn-main:hover{opacity:.9}
+.c-btn-alt{flex:1;min-width:200px;padding:12px 24px;background:transparent;color:#A8CCB0;border-radius:var(--radius);font-size:14px;font-weight:500;text-align:center;text-decoration:none;border:1px solid rgba(255,255,255,.2);cursor:pointer;transition:border-color .15s}
+.c-btn-alt:hover{border-color:rgba(255,255,255,.4)}
+
+/* ── QUIZ CTA BANNER ── */
+.quiz-banner{background:var(--green-light);border:1px solid #B8DFC8;border-radius:16px;padding:2.5rem 2rem;text-align:center;margin:0 1.25rem 4rem}
+.quiz-banner h2{font-size:clamp(20px,4vw,26px);font-weight:600;color:var(--green-dark);margin-bottom:.5rem}
+.quiz-banner p{font-size:15px;color:var(--green);margin-bottom:1.5rem;line-height:1.6}
+.btn-quiz{display:inline-block;padding:14px 36px;background:var(--green-dark);color:#fff;border-radius:var(--radius);font-size:16px;font-weight:600;text-decoration:none;transition:opacity .15s;border:none;cursor:pointer}
+.btn-quiz:hover{opacity:.85}
+.quiz-note{font-size:13px;color:var(--green);margin-top:.75rem}
+
+/* ── FOOTER ── */
+footer{text-align:center;padding:2rem 1.5rem 3rem;font-size:13px;color:var(--light);line-height:1.8}
+footer a{color:var(--green);text-decoration:none}
+footer a:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-brand">Identity Alignment Framework · Feysal Khaleefe</div>
+  <a class="nav-cta" href="https://feysalthecaliph.github.io/quiz" target="_blank" rel="noopener">Take the Free Quiz →</a>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-eyebrow">Identity Alignment Framework</div>
+  <h1>Your outer world is a <span>readout</span>.<br>Not a cause.</h1>
+  <p>Everything visible in your life — your finances, your relationships, your energy — is a reflection of what your inner world is currently set to. This framework helps you read it, understand it, and recalibrate it.</p>
+  <div class="hero-btns">
+    <a class="btn-hero-main" href="https://feysalthecaliph.github.io/quiz" target="_blank" rel="noopener">Discover your archetype — Free</a>
+    <a class="btn-hero-alt" href="#pricing">See the bundles</a>
+  </div>
+</div>
+
+<!-- QUOTE -->
+<div class="quote-strip">
+  <p>"Richness does not lie in the abundance of worldly goods — but richness is the richness of the soul."</p>
+  <cite>The Messenger of Allah ﷺ — Sahih Muslim 1051</cite>
+</div>
+
+<!-- FRAMEWORK -->
+<div class="section">
+  <div class="section-label">What you will work through</div>
+  <div class="section-title">The 5-Step Identity Alignment Framework</div>
+  <div class="section-sub">Built on the Quran, the Hadith, and Umar ibn al-Khattab's muhasabat al-nafs — the deliberate accounting of the soul. Starts at the source. Works downward.</div>
+  <div class="steps-grid">
+    <div class="step-card"><div class="step-num">STEP 01</div><div class="step-name">The Outer World Audit</div><div class="step-desc">Read your life as data, not judgement.</div></div>
+    <div class="step-card"><div class="step-num">STEP 02</div><div class="step-name">The Identity Check</div><div class="step-desc">Who shows up when no one is watching?</div></div>
+    <div class="step-card"><div class="step-num">STEP 03</div><div class="step-name">The Beliefs Scan</div><div class="step-desc">Surface the rules running your life.</div></div>
+    <div class="step-card"><div class="step-num">STEP 04</div><div class="step-name">The Emotional Compass</div><div class="step-desc">Read your emotions as diagnostic data.</div></div>
+    <div class="step-card"><div class="step-num">STEP 05</div><div class="step-name">The Recalibration</div><div class="step-desc">Declare who you are. Build the evidence.</div></div>
+  </div>
+
+  <div class="divider"></div>
+</div>
+
+<!-- ARCHETYPES -->
+<div class="section" style="padding-top:0">
+  <div class="section-label">The six identity archetypes</div>
+  <div class="section-title">What does your result look like?</div>
+  <div class="section-sub">Take the free quiz and discover which archetype is running your inner world. Here is what each result reveals.</div>
+
+  <div class="arch-intro">
+    <strong>How to read your result:</strong> Each archetype shows your natural gift, the shadow pattern limiting you, and the outer world pattern your identity is currently producing. The quiz takes 2 minutes. Your result takes a lifetime to fully understand.
+  </div>
+
+  <div class="arch-grid">
+
+    <!-- ARCHITECT -->
+    <div class="arch-card">
+      <div class="arch-head">
+        <div class="arch-badge" style="background:#EEEDFE;color:#3C3489;border-color:#AFA9EC">The Architect</div>
+        <div class="arch-name">The Architect</div>
+        <div class="arch-tagline">You don't just solve problems — you redesign the systems that create them.</div>
+      </div>
+      <div class="arch-body">
+        <div class="arch-section">
+          <div class="arch-section-label">Your gift</div>
+          <p>You see mechanism where others see mystery. While most people fight symptoms, you trace back to the root cause and redesign the whole system. People come to you because you make the incomprehensible feel manageable.</p>
+        </div>
+        <div class="arch-section">
+          <div class="arch-section-label">Your shadow</div>
+          <div class="arch-shadow"><p>You wait for the model to feel complete before you move. But in real systems, the model never fully closes. This perfectionism-dressed-as-integrity keeps you in diagnostic mode when execution mode is what is needed.</p></div>
+        </div>
+        <div class="arch-section">
+          <div class="arch-section-label">Your outer world pattern</div>
+          <p>Opportunities you are almost-but-not-quite claiming. Business ideas mapped but not launched. Goals clear but slightly delayed. The thermostat is set below your actual capability.</p>
+        </div>
+        <div class="arch-traits">
+          <span class="trait-tag" style="background:#EEEDFE;color:#3C3489">Systems thinking</span>
+          <span class="trait-tag" style="background:#EEEDFE;color:#3C3489">Coherence</span>
+          <span class="trait-tag" style="background:#EEEDFE;color:#3C3489">Designer</span>
+          <span class="trait-tag" style="background:#EEEDFE;color:#3C3489">Fear: incoherence</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- STEWARD -->
+    <div class="arch-card">
+      <div class="arch-head">
+        <div class="arch-badge" style="background:#E1F5EE;color:#085041;border-color:#5DCAA5">The Steward</div>
+        <div class="arch-name">The Steward</div>
+        <div class="arch-tagline">You build for others before you build for yourself — and it is both your gift and your ceiling.</div>
+      </div>
+      <div class="arch-body">
+        <div class="arch-section">
+          <div class="arch-section-label">Your gift</div>
+          <p>You have a rare capacity to hold other people's wellbeing as a genuine priority — not as performance, but as your actual operating mode. You create environments where others feel genuinely safe to grow.</p>
+        </div>
+        <div class="arch-section">
+          <div class="arch-section-label">Your shadow</div>
+          <div class="arch-shadow"><p>Service becomes your shield. By always prioritising others, you create a legitimate reason to delay claiming what is yours. The discomfort of receiving — money, recognition, credit — is real for you.</p></div>
+        </div>
+        <div class="arch-section">
+          <div class="arch-section-label">Your outer world pattern</div>
+          <p>Underpaid roles, opportunities that benefit everyone except you, relationships where you give more than you receive. This is not bad luck — it is your identity's set point displaying itself faithfully.</p>
+        </div>
+        <div class="arch-traits">
+          <span class="trait-tag" style="background:#E1F5EE;color:#085041">Relational</span>
+          <span class="trait-tag" style="background:#E1F5EE;color:#085041">Service</span>
+          <span class="trait-tag" style="background:#E1F5EE;color:#085041">Caretaker</span>
+          <span class="trait-tag" style="background:#E1F5EE;color:#085041">Fear: selfishness</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- SOVEREIGN -->
+    <div class="arch-card">
+      <div class="arch-head">
+        <div class="arch-badge" style="background:#FAEEDA;color:#633806;border-color:#EF9F27">The Sovereign</div>
+        <div class="arch-name">The Sovereign</div>
+        <div class="arch-tagline">You are built for impact — and your impatience with small lives is data, not arrogance.</div>
+      </div>
+      <div class="arch-body">
+        <div class="arch-section">
+          <div class="arch-section-label">Your gift</div>
+          <p>You have a rare capacity for decisive action — you do not wait for consensus or complete information. Where others stall, you move. In environments that reward initiative, you outperform almost everyone.</p>
+        </div>
+        <div class="arch-section">
+          <div class="arch-section-label">Your shadow</div>
+          <div class="arch-shadow"><p>Your speed creates cracks in foundations. You move to the next thing before the previous thing has been properly built. Your biggest risk is building at velocity on unstable ground.</p></div>
+        </div>
+        <div class="arch-section">
+          <div class="arch-section-label">Your outer world pattern</div>
+          <p>Cycles between high momentum and unexpected collapse. Surge forward, hit a structural problem that was visible earlier but ignored, reset. The thermostat is set to action — but not always the right kind.</p>
+        </div>
+        <div class="arch-traits">
+          <span class="trait-tag" style="background:#FAEEDA;color:#633806">Executive</span>
+          <span class="trait-tag" style="background:#FAEEDA;color:#633806">Achievement</span>
+          <span class="trait-tag" style="background:#FAEEDA;color:#633806">Leader</span>
+          <span class="trait-tag" style="background:#FAEEDA;color:#633806">Fear: stagnation</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- GUARDIAN -->
+    <div class="arch-card">
+      <div class="arch-head">
+        <div class="arch-badge" style="background:#FAECE7;color:#712B13;border-color:#F0997B">The Guardian</div>
+        <div class="arch-name">The Guardian</div>
+        <div class="arch-tagline">You protect what matters — and you often forget that you are also something worth protecting.</div>
+      </div>
+      <div class="arch-body">
+        <div class="arch-section">
+          <div class="arch-section-label">Your gift</div>
+          <p>You have exceptional threat perception — you see what could go wrong before it does. In families and organisations, you are the person who prevents the catastrophe everyone else missed. Your caution has saved more than it has cost.</p>
+        </div>
+        <div class="arch-section">
+          <div class="arch-section-label">Your shadow</div>
+          <div class="arch-shadow"><p>The same threat perception that protects you also limits you. Expansion activates the same alarm as actual risk. Your nervous system has not yet learned the difference between a real threat and a new level.</p></div>
+        </div>
+        <div class="arch-section">
+          <div class="arch-section-label">Your outer world pattern</div>
+          <p>A life that is secure but constrained. Enough — but not abundant. Safe — but not free. The thermostat is set to protection rather than growth, and the two feel incompatible even when they are not.</p>
+        </div>
+        <div class="arch-traits">
+          <span class="trait-tag" style="background:#FAECE7;color:#712B13">Risk-aware</span>
+          <span class="trait-tag" style="background:#FAECE7;color:#712B13">Safety</span>
+          <span class="trait-tag" style="background:#FAECE7;color:#712B13">Protector</span>
+          <span class="trait-tag" style="background:#FAECE7;color:#712B13">Fear: loss</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- SEEKER -->
+    <div class="arch-card">
+      <div class="arch-head">
+        <div class="arch-badge" style="background:#E6F1FB;color:#0C447C;border-color:#85B7EB">The Seeker</div>
+        <div class="arch-name">The Seeker</div>
+        <div class="arch-tagline">You are driven by understanding — and the depth you carry is the rarest thing in any room.</div>
+      </div>
+      <div class="arch-body">
+        <div class="arch-section">
+          <div class="arch-section-label">Your gift</div>
+          <p>You go deeper than the accepted explanation and do not stop until you find the actual mechanism. You are the person who changes how a room thinks about something, because you saw what everyone else walked past.</p>
+        </div>
+        <div class="arch-section">
+          <div class="arch-section-label">Your shadow</div>
+          <div class="arch-shadow"><p>Understanding has become a substitute for action. The research phase never closes because there is always more to know. The understanding actually arrives through the action — not before it.</p></div>
+        </div>
+        <div class="arch-section">
+          <div class="arch-section-label">Your outer world pattern</div>
+          <p>A library of wisdom and a shortage of output. Ideas unconverted. Knowledge unapplied. The thermostat is set to consumption rather than creation — and the gap between what you know and what you have built is where the frustration lives.</p>
+        </div>
+        <div class="arch-traits">
+          <span class="trait-tag" style="background:#E6F1FB;color:#0C447C">Exploratory</span>
+          <span class="trait-tag" style="background:#E6F1FB;color:#0C447C">Truth</span>
+          <span class="trait-tag" style="background:#E6F1FB;color:#0C447C">Analyst</span>
+          <span class="trait-tag" style="background:#E6F1FB;color:#0C447C">Fear: superficiality</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- WEAVER -->
+    <div class="arch-card">
+      <div class="arch-head">
+        <div class="arch-badge" style="background:#FBEAF0;color:#72243E;border-color:#ED93B1">The Weaver</div>
+        <div class="arch-name">The Weaver</div>
+        <div class="arch-tagline">You build connection like others build systems — it is your native intelligence and your deepest calling.</div>
+      </div>
+      <div class="arch-body">
+        <div class="arch-section">
+          <div class="arch-section-label">Your gift</div>
+          <p>You read rooms and people with precision that feels intuitive but is a highly developed form of social intelligence. In communities and organisations, you are the connective tissue that holds everything together.</p>
+        </div>
+        <div class="arch-section">
+          <div class="arch-section-label">Your shadow</div>
+          <div class="arch-shadow"><p>You adjust yourself to maintain harmony so consistently that you have lost track of where the performance ends and the real you begins. People-pleasing has a ceiling: you cannot express your gifts while managing how you land on others.</p></div>
+        </div>
+        <div class="arch-section">
+          <div class="arch-section-label">Your outer world pattern</div>
+          <p>A rich social world and a thin personal one. Loved by many, deeply known by few. The thermostat is set to connection-for-others rather than expression-for-self.</p>
+        </div>
+        <div class="arch-traits">
+          <span class="trait-tag" style="background:#FBEAF0;color:#72243E">Relational</span>
+          <span class="trait-tag" style="background:#FBEAF0;color:#72243E">Connection</span>
+          <span class="trait-tag" style="background:#FBEAF0;color:#72243E">Connector</span>
+          <span class="trait-tag" style="background:#FBEAF0;color:#72243E">Fear: isolation</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- QUIZ BANNER -->
+<div class="quiz-banner">
+  <h2>Which archetype are you?</h2>
+  <p>10 questions · 2 minutes · Completely free<br>Discover the hidden operating system shaping your decisions, relationships, and results.</p>
+  <a class="btn-quiz" href="https://feysalthecaliph.github.io/quiz" target="_blank" rel="noopener">Take the Free Quiz →</a>
+  <div class="quiz-note">No email required to see your result</div>
+</div>
+
+<!-- PRICING -->
+<div class="section" id="pricing" style="padding-top:1rem">
+  <div class="section-label">Choose your path</div>
+  <div class="section-title">Three ways to go deeper</div>
+  <div class="section-sub">Every option includes the complete 5-step framework. Choose based on how much support you want around it.</div>
+
+  <div class="pricing-grid">
+
+    <!-- $17 -->
+    <div class="plan">
+      <div class="plan-head">
+        <div class="plan-type">Option 1 · Self-directed</div>
+        <div class="plan-name">The Recalibration Guide</div>
+        <div class="plan-tagline">Full autonomy. Navigate the framework entirely on your own terms — no method imposed. Just the guide and your honest self.</div>
+        <div class="plan-price"><span class="p-amount">$17</span><span class="p-label">one-time</span></div>
+      </div>
+      <div class="plan-divider"></div>
+      <div class="plan-features">
+        <div class="feat"><span class="feat-icon">✓</span><span>Complete 5-step Identity Alignment Framework</span></div>
+        <div class="feat"><span class="feat-icon">✓</span><span>Quran, Hadith and Umar's Muhasabah foundation</span></div>
+        <div class="feat"><span class="feat-icon">✓</span><span>All reflection journals and recalibration sheets</span></div>
+        <div class="feat"><span class="feat-icon">✓</span><span>How-to-use guide and frequency manual</span></div>
+        <div class="feat"><span class="feat-icon">✓</span><span>Full autonomy — use it however you choose</span></div>
+      </div>
+      <div class="plan-footer">
+        <a class="p-btn btn-outline" href="https://payhip.com" target="_blank" rel="noopener">Get the guide — $17</a>
+      </div>
+    </div>
+
+    <!-- $37 -->
+    <div class="plan featured">
+      <div class="pop-tag">Most popular</div>
+      <div class="plan-head">
+        <div class="plan-type">Option 2 · AI-assisted</div>
+        <div class="plan-name">Guide + AI Prompt Method</div>
+        <div class="plan-tagline">The complete guide plus a precision AI prompt that transforms any chatbot into your personal identity coach — exposing what you cannot see yourself.</div>
+        <div class="plan-price"><span class="p-amount">$37</span><span class="p-label">one-time</span><span class="p-was">$97 value</span></div>
+      </div>
+      <div class="plan-divider"></div>
+      <div class="plan-features">
+        <div class="feat"><span class="feat-icon">✓</span><span>Everything in Option 1</span></div>
+        <div class="feat"><span class="feat-icon">✓</span><span>Full AI session prompt — copy, paste, go</span></div>
+        <div class="feat"><span class="feat-icon">✓</span><span>Works with ChatGPT, Claude, Gemini or any AI</span></div>
+        <div class="feat"><span class="feat-icon">✓</span><span>AI challenges polished answers and surfaces root beliefs</span></div>
+        <div class="feat"><span class="feat-icon">✓</span><span>Complete identity mirror delivered at session end</span></div>
+        <div class="feat"><span class="feat-icon">✓</span><span>Tailored to your specific archetype result</span></div>
+        <div class="feat"><span class="feat-icon">✓</span><span>You are the source of truth — the AI is your mirror</span></div>
+      </div>
+      <div class="plan-footer">
+        <a class="p-btn btn-green" href="https://payhip.com" target="_blank" rel="noopener">Get guide + AI method — $37</a>
+      </div>
+    </div>
+
+    <!-- $150 -->
+    <div class="plan premium">
+      <div class="lim-tag">3 spots / week</div>
+      <div class="plan-head">
+        <div class="plan-type">Option 3 · Hand-held</div>
+        <div class="plan-name">Guide + AI + Feysal's Walkthrough</div>
+        <div class="plan-tagline">Three personal sessions with Feysal across one week. Live walkthrough, mid-week check, and end-of-week integration with your 30-day protocol.</div>
+        <div class="plan-price"><span class="p-amount">$150</span><span class="p-label">launch price</span><span class="p-was">$580 value</span></div>
+        <div class="p-limit">⚠ Only 3 spots per week — intentionally capped</div>
+      </div>
+      <div class="plan-divider"></div>
+      <div class="plan-features">
+        <div class="feat"><span class="feat-icon">✓</span><span>Everything in Options 1 and 2</span></div>
+        <div class="feat"><span class="feat-icon">✓</span><span>Session 1 · Day 1 · 60 min — live framework walkthrough</span></div>
+        <div class="feat"><span class="feat-icon">✓</span><span>Session 2 · Day 3–4 · 60 min — progress and pattern audit</span></div>
+        <div class="feat"><span class="feat-icon">✓</span><span>Session 3 · End of week · 60 min — integration + 30-day protocol</span></div>
+        <div class="feat"><span class="feat-icon">✓</span><span>WhatsApp access between sessions</span></div>
+        <div class="feat"><span class="feat-icon">✓</span><span>All session recordings sent to you</span></div>
+        <div class="feat"><span class="feat-icon">✓</span><span>Guarantee — if Session 1 doesn't move you, pay nothing</span></div>
+      </div>
+      <div class="plan-footer">
+        <a class="p-btn btn-dark" href="https://www.instagram.com/feysalthecaliph" target="_blank" rel="noopener">DM @feysalthecaliph 'WALKTHROUGH'</a>
+        <div class="p-note">Spots fill weekly. Miss this week? You join next week's waitlist.</div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- COHORT -->
+  <div class="cohort">
+    <div class="c-eyebrow">Coming Autumn 2026 · Applications Now Open</div>
+    <div class="c-title">The Identity Alignment Programme</div>
+    <div class="c-sub">The full 8-week live cohort. All layers of the framework — weekly group calls, private community, personalised blockage analysis, financial psyche work, and your 30-day integration protocol. For the person ready to permanently close the gap between who they know themselves to be and the life they are currently living.</div>
+    <div class="c-meta">
+      <div class="c-detail"><div class="c-label">First cohort opens</div><div class="c-val">Monday 7 September 2026</div></div>
+      <div class="c-detail"><div class="c-label">Duration</div><div class="c-val">8 weeks · closes 25 Oct 2026</div></div>
+      <div class="c-detail"><div class="c-label">Cohort size</div><div class="c-val">Maximum 15 · applications reviewed</div></div>
+      <div class="c-detail"><div class="c-label">Format</div><div class="c-val">Weekly live calls + private community</div></div>
+    </div>
+    <div class="c-tiers">
+      <div class="c-tier">
+        <div class="ct-label">Group track</div>
+        <div class="ct-name">The Alignment Cohort</div>
+        <div class="ct-price">$497 <span>· full programme</span></div>
+        <ul class="ct-feats">
+          <li>8 x weekly live group calls (90 min)</li>
+          <li>All 8 framework layers covered</li>
+          <li>Private cohort community</li>
+          <li>Complete blockage analysis</li>
+          <li>Financial psyche framework</li>
+          <li>30-day integration protocol</li>
+          <li>All session recordings</li>
+        </ul>
+      </div>
+      <div class="c-tier vip">
+        <div class="ct-label gold">VIP track · 3 spots only</div>
+        <div class="ct-name">The VIP Alignment</div>
+        <div class="ct-price">$997 <span>· full programme</span></div>
+        <ul class="ct-feats">
+          <li>Everything in the Group track</li>
+          <li>3 private 1:1 sessions with Feysal</li>
+          <li>Priority WhatsApp access throughout</li>
+          <li>Personalised archetype deep-dive</li>
+          <li>Custom 30-day protocol written for you</li>
+          <li>First access to next cohort at locked price</li>
+        </ul>
+      </div>
+    </div>
+    <div class="c-btns">
+      <a class="c-btn-main" href="https://www.instagram.com/feysalthecaliph" target="_blank" rel="noopener">DM @feysalthecaliph 'COHORT' to apply</a>
+      <a class="c-btn-alt" href="mailto:faysalesmalio@gmail.com?subject=Cohort%20enquiry">Email with questions</a>
+    </div>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <p><a href="https://www.instagram.com/feysalthecaliph" target="_blank" rel="noopener">@feysalthecaliph</a> &nbsp;·&nbsp; <a href="mailto:faysalesmalio@gmail.com">faysalesmalio@gmail.com</a></p>
+  <p style="margin-top:.3rem">Identity Alignment Framework · Feysal Khaleefe · All rights reserved</p>
+</footer>
+
+</body>
+</html>
