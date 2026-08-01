@@ -138,9 +138,36 @@ nav{background:var(--green-dark);padding:1rem 1.5rem;display:flex;justify-conten
 .quiz-note{font-size:13px;color:var(--green);margin-top:.75rem}
 
 /* ── FOOTER ── */
-footer{text-align:center;padding:2rem 1.5rem 3rem;font-size:13px;color:var(--light);line-height:1.8}
-footer a{color:var(--green);text-decoration:none}
-footer a:hover{text-decoration:underline}
+footer{background:var(--green-dark);color:#A8CCB0;font-size:13px;line-height:1.7;margin-top:4rem}
+.footer-top{max-width:960px;margin:0 auto;padding:3rem 1.25rem 2.5rem;display:grid;grid-template-columns:1fr 2fr;gap:3rem}
+@media(max-width:640px){.footer-top{grid-template-columns:1fr}}
+.footer-logo{font-size:16px;font-weight:600;color:#fff;margin-bottom:.5rem}
+.footer-tagline{font-size:12px;color:#668866;line-height:1.6;margin-bottom:1rem}
+.footer-social{display:flex;gap:12px}
+.footer-social a{font-size:12px;color:#88AA88;text-decoration:none;border:0.5px solid rgba(255,255,255,.15);padding:5px 12px;border-radius:20px;transition:border-color .15s}
+.footer-social a:hover{border-color:rgba(255,255,255,.35);color:#fff}
+.footer-cols{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+@media(max-width:480px){.footer-cols{grid-template-columns:1fr 1fr}}
+.footer-col{display:flex;flex-direction:column;gap:8px}
+.footer-col-title{font-size:11px;font-weight:600;letter-spacing:.08em;color:#5DCAA5;text-transform:uppercase;margin-bottom:4px}
+.footer-col a{font-size:12px;color:#88AA88;text-decoration:none;transition:color .15s}
+.footer-col a:hover{color:#fff}
+.footer-divider{height:0.5px;background:rgba(255,255,255,.08);margin:0 1.25rem}
+
+/* ── LEGAL SECTIONS ── */
+.legal-section{max-width:860px;margin:0 auto;padding:2.5rem 1.25rem}
+.legal-title{font-size:16px;font-weight:600;color:#fff;margin-bottom:.3rem}
+.legal-updated{font-size:11px;color:#668866;margin-bottom:1rem;letter-spacing:.03em}
+.legal-body{display:flex;flex-direction:column;gap:.75rem}
+.legal-body p{font-size:12px;color:#A8CCB0;line-height:1.75}
+.legal-body strong{color:#C8DCC8;font-weight:600}
+
+/* ── FOOTER BOTTOM ── */
+.footer-bottom{max-width:960px;margin:0 auto;padding:1.25rem 1.25rem 2rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.75rem;border-top:0.5px solid rgba(255,255,255,.08)}
+.footer-bottom div:first-child{font-size:11px;color:#668866;line-height:1.5}
+.footer-bottom-links{display:flex;gap:16px}
+.footer-bottom-links a{font-size:11px;color:#668866;text-decoration:none;transition:color .15s}
+.footer-bottom-links a:hover{color:#A8CCB0}
 </style>
 </head>
 <body>
@@ -148,7 +175,7 @@ footer a:hover{text-decoration:underline}
 <!-- NAV -->
 <nav>
   <div class="nav-brand">Identity Alignment Framework · Feysal Khaleefe</div>
-  <a class="nav-cta" href="https://thecaliphstore.github.io/IDENTITY-ARCHETYPE/" target="_blank" rel="noopener">Take the Free Quiz →</a>
+  <a class="nav-cta" href="https://feysalthecaliph.github.io/quiz" target="_blank" rel="noopener">Take the Free Quiz →</a>
 </nav>
 
 <!-- HERO -->
@@ -157,7 +184,7 @@ footer a:hover{text-decoration:underline}
   <h1>Your outer world is a <span>readout</span>.<br>Not a cause.</h1>
   <p>Everything visible in your life — your finances, your relationships, your energy — is a reflection of what your inner world is currently set to. This framework helps you read it, understand it, and recalibrate it.</p>
   <div class="hero-btns">
-    <a class="btn-hero-main" href="https://thecaliphstore.github.io/IDENTITY-ARCHETYPE/" target="_blank" rel="noopener">Discover your archetype — Free</a>
+    <a class="btn-hero-main" href="https://feysalthecaliph.github.io/quiz" target="_blank" rel="noopener">Discover your archetype — Free</a>
     <a class="btn-hero-alt" href="#pricing">See the bundles</a>
   </div>
 </div>
@@ -377,7 +404,7 @@ footer a:hover{text-decoration:underline}
 <div class="quiz-banner">
   <h2>Which archetype are you?</h2>
   <p>10 questions · 2 minutes · Completely free<br>Discover the hidden operating system shaping your decisions, relationships, and results.</p>
-  <a class="btn-quiz" href="https://thecaliphstore.github.io/IDENTITY-ARCHETYPE/" target="_blank" rel="noopener">Take the Free Quiz →</a>
+  <a class="btn-quiz" href="https://feysalthecaliph.github.io/quiz" target="_blank" rel="noopener">Take the Free Quiz →</a>
   <div class="quiz-note">No email required to see your result</div>
 </div>
 
@@ -406,7 +433,7 @@ footer a:hover{text-decoration:underline}
         <div class="feat"><span class="feat-icon">✓</span><span>Full autonomy — use it however you choose</span></div>
       </div>
       <div class="plan-footer">
-        <a class="p-btn btn-outline" href="https://payhip.com" target="_blank" rel="noopener">Get the guide — $17</a>
+        <a class="p-btn btn-outline" href="https://feysalkhaleefe.lemonsqueezy.com/buy/starter" target="_blank" rel="noopener">Get the guide — $17</a>
       </div>
     </div>
 
@@ -430,7 +457,7 @@ footer a:hover{text-decoration:underline}
         <div class="feat"><span class="feat-icon">✓</span><span>You are the source of truth — the AI is your mirror</span></div>
       </div>
       <div class="plan-footer">
-        <a class="p-btn btn-green" href="https://payhip.com" target="_blank" rel="noopener">Get guide + AI method — $37</a>
+        <a class="p-btn btn-green" href="https://feysalkhaleefe.lemonsqueezy.com/buy/ai-method" target="_blank" rel="noopener">Get guide + AI method — $37</a>
       </div>
     </div>
 
@@ -497,6 +524,7 @@ footer a:hover{text-decoration:underline}
           <li>3 private 1:1 sessions with Feysal</li>
           <li>Priority WhatsApp access throughout</li>
           <li>Personalised archetype deep-dive</li>
+          <li>Custom 30-day protocol written for you</li>
           <li>First access to next cohort at locked price</li>
         </ul>
       </div>
@@ -511,8 +539,111 @@ footer a:hover{text-decoration:underline}
 
 <!-- FOOTER -->
 <footer>
-  <p><a href="https://www.instagram.com/feysalthecaliph" target="_blank" rel="noopener">@feysalthecaliph</a> &nbsp;·&nbsp; <a href="mailto:faysalesmalio@gmail.com">faysalesmalio@gmail.com</a></p>
-  <p style="margin-top:.3rem">Identity Alignment Framework · Feysal Khaleefe · All rights reserved</p>
+
+  <div class="footer-top">
+    <div class="footer-brand">
+      <div class="footer-logo">Identity Alignment Framework™</div>
+      <div class="footer-tagline">A 5-step recalibration system for the inner world.<br>Built on the Identity Alignment Framework by Feysal Khaleefe.</div>
+      <div class="footer-social">
+        <a href="https://www.instagram.com/feysalthecaliph" target="_blank" rel="noopener">Instagram</a>
+        <a href="mailto:faysalesmalio@gmail.com">Email</a>
+      </div>
+    </div>
+    <div class="footer-cols">
+      <div class="footer-col">
+        <div class="footer-col-title">Products</div>
+        <a href="https://feysalkhaleefe.lemonsqueezy.com/buy/starter" target="_blank" rel="noopener">Starter Kit — $17</a>
+        <a href="https://feysalkhaleefe.lemonsqueezy.com/buy/ai-method" target="_blank" rel="noopener">AI Method Kit — $37</a>
+        <a href="https://www.instagram.com/feysalthecaliph" target="_blank" rel="noopener">Walkthrough Sessions — $150</a>
+        <a href="#pricing">Cohort Programme — 2026</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Explore</div>
+        <a href="https://feysalthecaliph.github.io/quiz" target="_blank" rel="noopener">Free Archetype Quiz</a>
+        <a href="#pricing">Compare Bundles</a>
+        <a href="https://www.instagram.com/feysalthecaliph" target="_blank" rel="noopener">@feysalthecaliph</a>
+        <a href="mailto:faysalesmalio@gmail.com">Contact Us</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Legal</div>
+        <a href="#privacy">Privacy Policy</a>
+        <a href="#terms">Terms of Service</a>
+        <a href="#refund">Refund Policy</a>
+        <a href="mailto:faysalesmalio@gmail.com">Contact</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-divider"></div>
+
+  <!-- PRIVACY POLICY -->
+  <div class="legal-section" id="privacy">
+    <div class="legal-title">Privacy Policy</div>
+    <div class="legal-updated">Last updated: 1 August 2026</div>
+    <div class="legal-body">
+      <p>Feysal Khaleefe ("we", "our", or "us") operates this website and the Identity Alignment Framework digital products. This Privacy Policy explains how we collect, use, and protect your personal information when you visit this site or purchase our products.</p>
+      <p><strong>Information we collect.</strong> We collect information you voluntarily provide when purchasing a product (name, email address, billing information processed by Lemon Squeezy) and when contacting us directly. We do not collect sensitive personal data beyond what is necessary to fulfil your order.</p>
+      <p><strong>How we use your information.</strong> We use your information to process and deliver your purchase, respond to enquiries, send product updates or communications you have opted into, and improve our products and services. We do not sell, rent, or trade your personal information to third parties.</p>
+      <p><strong>Payment processing.</strong> All payments are processed securely by Lemon Squeezy (Lemon Squeezy, LLC). We do not store your payment card details. Lemon Squeezy's privacy policy governs the handling of your payment data.</p>
+      <p><strong>Cookies.</strong> This website uses minimal cookies necessary for basic functionality. We do not use tracking cookies or third-party advertising cookies. You may disable cookies in your browser settings without affecting your ability to view this page.</p>
+      <p><strong>Third-party links.</strong> This site contains links to third-party platforms (Instagram, GitHub). We are not responsible for the privacy practices of those platforms.</p>
+      <p><strong>Data retention.</strong> We retain your order information for as long as required by applicable tax and accounting law, typically seven years. You may request deletion of your personal data at any time by contacting us at faysalesmalio@gmail.com.</p>
+      <p><strong>Your rights.</strong> Depending on your jurisdiction, you may have the right to access, correct, or delete your personal data. To exercise these rights, contact us at faysalesmalio@gmail.com. We will respond within 30 days.</p>
+      <p><strong>Contact.</strong> For any privacy-related enquiries: faysalesmalio@gmail.com</p>
+    </div>
+  </div>
+
+  <div class="footer-divider"></div>
+
+  <!-- TERMS OF SERVICE -->
+  <div class="legal-section" id="terms">
+    <div class="legal-title">Terms of Service</div>
+    <div class="legal-updated">Last updated: 1 August 2026</div>
+    <div class="legal-body">
+      <p>By purchasing or using any product from this website, you agree to the following terms. Please read them carefully before completing your purchase.</p>
+      <p><strong>Products and delivery.</strong> The Identity Alignment Framework digital products (Starter Kit, AI Method Kit, and related materials) are delivered electronically via Lemon Squeezy immediately upon successful payment. You will receive a download link to your registered email address. Ensure your email address is entered correctly at checkout.</p>
+      <p><strong>Intellectual property.</strong> All content, materials, frameworks, workbooks, prompts, and documents within these products are the intellectual property of Feysal Khaleefe. The Identity Alignment Framework™ and Identity Recalibration Guide™ are proprietary systems. You are granted a personal, non-exclusive, non-transferable licence to use the purchased materials for your own personal development. You may not reproduce, distribute, resell, share, or create derivative works from any of the materials without express written permission.</p>
+      <p><strong>Personal use only.</strong> These products are licensed for individual personal use. Group, institutional, or commercial use requires a separate licensing agreement. Contact faysalesmalio@gmail.com to discuss licensing.</p>
+      <p><strong>No professional advice.</strong> The Identity Alignment Framework is an educational and self-development tool. It is not a substitute for professional psychological, medical, financial, or legal advice. If you are experiencing a mental health crisis, please seek support from a qualified professional.</p>
+      <p><strong>Results disclaimer.</strong> The outcomes from using these materials depend entirely on the effort, honesty, and consistency of the individual user. We make no guarantees of specific results. Testimonials and examples shared on this page reflect individual experiences and are not representative of typical outcomes.</p>
+      <p><strong>Coaching sessions.</strong> The 3-Session Walkthrough ($150) involves live sessions with Feysal Khaleefe. Sessions are conducted via video call. Scheduling is confirmed via direct message on Instagram. The session guarantee (refund if Session 1 does not produce value) is subject to the Session 1 taking place in full and the participant engaging genuinely with the framework content.</p>
+      <p><strong>Cohort programme.</strong> The Identity Alignment Programme cohort (launching September 2026) is subject to separate terms provided at the time of application. Application does not guarantee admission. Admission decisions are made by Feysal Khaleefe at his sole discretion.</p>
+      <p><strong>Modifications.</strong> We reserve the right to update these terms at any time. Continued use of the site or products after changes constitutes acceptance of the revised terms.</p>
+      <p><strong>Governing law.</strong> These terms are governed by the laws of Malaysia. Any disputes shall be resolved in the courts of Malaysia, unless otherwise required by applicable consumer protection law in your jurisdiction.</p>
+      <p><strong>Contact.</strong> faysalesmalio@gmail.com</p>
+    </div>
+  </div>
+
+  <div class="footer-divider"></div>
+
+  <!-- REFUND POLICY -->
+  <div class="legal-section" id="refund">
+    <div class="legal-title">Refund Policy</div>
+    <div class="legal-updated">Last updated: 1 August 2026</div>
+    <div class="legal-body">
+      <p>We stand behind the quality of our products and want every customer to feel confident in their purchase. Please read this policy carefully before buying.</p>
+      <p><strong>Digital products — 7-day satisfaction guarantee.</strong> If you purchase the Starter Kit ($17) or the AI Method Kit ($37) and are not satisfied with your purchase, you may request a full refund within 7 days of your purchase date. To request a refund, email faysalesmalio@gmail.com with your order number and a brief explanation. We will process eligible refunds within 5 business days.</p>
+      <p><strong>Eligibility.</strong> Refund requests must be submitted within 7 days of the original purchase date. Refunds are available for first-time purchases of each product. Repeat purchases of the same product are not eligible for refund. Refunds are not available if the product has been shared, redistributed, or used for commercial purposes in violation of our Terms of Service.</p>
+      <p><strong>Coaching sessions — Session 1 guarantee.</strong> For the 3-Session Walkthrough ($150), if after completing Session 1 in full you do not feel you have gained a clearer understanding of your inner world than before, you may request a full refund before Session 2 takes place. Refund requests for coaching must be made within 48 hours of Session 1 concluding. Sessions 2 and 3 are not individually refundable once Session 1 has been delivered without a refund claim.</p>
+      <p><strong>Cohort programme.</strong> Refund terms for the Identity Alignment Programme cohort will be provided in the cohort enrolment agreement at the time of application. As a general guideline, refunds are available within 14 days of the cohort start date if fewer than two sessions have been attended.</p>
+      <p><strong>How to request a refund.</strong> Email faysalesmalio@gmail.com with: your full name, the email address used at purchase, your order number (found in your Lemon Squeezy receipt), the product purchased, and your reason for requesting a refund. We will confirm receipt of your request within 2 business days and process eligible refunds within 5 business days of approval.</p>
+      <p><strong>Chargebacks.</strong> We encourage customers to contact us directly before initiating a chargeback with their bank or payment provider. We are committed to resolving any issues promptly. Unwarranted chargebacks may result in being barred from future purchases.</p>
+      <p><strong>Contact.</strong> faysalesmalio@gmail.com — we aim to respond to all refund requests within 2 business days.</p>
+    </div>
+  </div>
+
+  <div class="footer-divider"></div>
+
+  <div class="footer-bottom">
+    <div>© 2026 Feysal Khaleefe. Identity Alignment Framework™ and Identity Recalibration Guide™ are proprietary systems. All rights reserved.</div>
+    <div class="footer-bottom-links">
+      <a href="#privacy">Privacy</a>
+      <a href="#terms">Terms</a>
+      <a href="#refund">Refunds</a>
+      <a href="mailto:faysalesmalio@gmail.com">Contact</a>
+    </div>
+  </div>
+
 </footer>
 
 </body>
