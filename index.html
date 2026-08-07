@@ -168,6 +168,12 @@ footer{background:var(--green-dark);color:#A8CCB0;font-size:13px;line-height:1.7
 .footer-bottom-links{display:flex;gap:16px}
 .footer-bottom-links a{font-size:11px;color:#668866;text-decoration:none;transition:color .15s}
 .footer-bottom-links a:hover{color:#A8CCB0}
+
+/* ── CONTACT INFO ── */
+.contact-info-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:10px}
+.contact-store{grid-column:1/-1;background:rgba(255,255,255,.07);border:0.5px solid rgba(255,255,255,.14);border-radius:12px;padding:1rem 1.1rem;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.contact-store-name{font-size:16px;font-weight:600;color:#fff}
+.contact-store-label{font-size:11px;font-weight:500;letter-spacing:.05em;color:#88AA88;text-transform:uppercase;background:rgba(255,255,255,.08);border:0.5px solid rgba(255,255,255,.14);padding:4px 10px;border-radius:20px}
 </style>
 </head>
 <body>
@@ -562,14 +568,14 @@ footer{background:var(--green-dark);color:#A8CCB0;font-size:13px;line-height:1.7
         <a href="https://thecaliphstore.github.io/IDENTITY-ARCHETYPE/" target="_blank" rel="noopener">Free Archetype Quiz</a>
         <a href="#pricing">Compare Bundles</a>
         <a href="https://www.instagram.com/feysalthecaliph" target="_blank" rel="noopener">@feysalthecaliph</a>
-        <a href="mailto:faysalesmalio@gmail.com">Contact Us</a>
+        <a href="#contact">Contact Us</a>
       </div>
       <div class="footer-col">
         <div class="footer-col-title">Legal</div>
         <a href="#privacy">Privacy Policy</a>
         <a href="#terms">Terms of Service</a>
         <a href="#refund">Refund Policy</a>
-        <a href="mailto:faysalesmalio@gmail.com">Contact</a>
+        <a href="#contact">Contact</a>
       </div>
     </div>
   </div>
@@ -640,7 +646,25 @@ footer{background:var(--green-dark);color:#A8CCB0;font-size:13px;line-height:1.7
       <a href="#privacy">Privacy</a>
       <a href="#terms">Terms</a>
       <a href="#refund">Refunds</a>
-      <a href="mailto:faysalesmalio@gmail.com">Contact</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+
+  <div class="footer-divider"></div>
+
+  <!-- BUSINESS & CONTACT INFORMATION -->
+  <div class="legal-section" id="contact">
+    <div class="legal-title">Business and Contact Information</div>
+    <div class="legal-updated">Official business details</div>
+    <div class="contact-info-grid">
+      <div class="contact-store">
+        <div class="contact-store-name">Identity Alignment Framework</div>
+        <div class="contact-store-label">Store / Username</div>
+      </div>
+      <div class="c-detail"><div class="c-label">Full name</div><div class="c-val">Faysal Abshir</div></div>
+      <div class="c-detail"><div class="c-label">Address</div><div class="c-val">PV 6, Jalan Melati Utama 1, 53100, Kuala Lumpur, Malaysia</div></div>
+      <div class="c-detail"><div class="c-label">Email</div><div class="c-val">faysalesmalio@gmail.com</div></div>
+      <div class="c-detail"><div class="c-label">Phone</div><div class="c-val">+60183262713</div></div>
     </div>
   </div>
 
